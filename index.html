@@ -11,13 +11,15 @@
 
     <body ng-app="instafeed">
         
-        <canvas id="canvas" width="500" height="400"></canvas>
+        <canvas id="canvas" width="600" height="400"></canvas>
 		<br>
-		<input id="blocks" type="range" min="1" max="50" value="5">        
+		<input id="blocks" type="range" min="1" max="50" value="5">
                 
         <section ng-controller="ShowImages as images">
             <header>
-              <h1>Angular.js Instagram Feed</h1>
+              <h1>Angular.js Instagram Feed</h1><br>
+			  <div id="log"></div>
+
             </header>
 
 
@@ -36,6 +38,7 @@
         <script src="js/pixelate.js"></script>
         <script src="js/color_classifier.js"></script>
         <script src="js/dataset.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     </body>
 </html>
