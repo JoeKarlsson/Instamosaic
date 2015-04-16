@@ -3,39 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Instamosaic</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pixalate.css">
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700|Karma:400,700" rel="stylesheet" type="text/css" />
 </head>
 
-    <body ng-app="instafeed">
-        
-        <canvas id="canvas" width="600" height="400"></canvas>
-		<br>
-		<input id="blocks" type="range" min="1" max="50" value="5">
-                
-        <section ng-controller="ShowImages as images">
-            <header>
-              <h1>Angular.js Instagram Feed</h1><br>
-			  <div id="log"></div>
-
-            </header>
-
-
-            <ul ng-show="layout == 'grid'" class="grid">
-                <!-- A view with big photos and no text -->
-                <li ng-repeat="p in pics">
-                    <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" /></a>
-                </li>
-            </ul>
-
-        </section>
-        
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="js/application.js"></script>
-        <script src="js/pixelate.js"></script>
+    <body>
+      <h1>Instamosaic</h1>  
+      <canvas id="canvas" width="600" height="400"></canvas>
+  		<br>
+  		<input id="blocks" type="range" min="1" max="10" value="1">
+      <br>
+      <div id="instafeed"></div>
+      
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/instafeed.min.js"></script>
+      <script type="text/javascript" src="js/ntc.js"></script>
+      <script src="js/pixelate.js"></script>
 
     </body>
 </html>
