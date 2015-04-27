@@ -10,15 +10,18 @@
     <body>
     <h1>Instamosaic</h1>   
     <br>
-    <canvas id="canvas" style="width: 80%; height:80%;"></canvas>
+    <canvas id="pixelate" style="width: 80%; height:80%;"></canvas>
     <br>
-    <input id="blocks" type="range" min="2" max="9" value="4">
+    <input id="blocks" type="range" min="2" max="9" value="2">
 
     <form id="frm1" onsubmit="submitImageURL()">
       Image URL: 
       <input type="text" id="ImageURL" name="ImageURL" value="https://i.imgur.com/4RBHmsi.jpg" required>
       <button type="button" text ="submit" onclick="submitImageURL()"> Submit </button>
     </form>
+
+    <canvas id="instamosaic" style="width: 80%; height:80%;"></canvas>
+
       
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/instafeed.min.js"></script>
