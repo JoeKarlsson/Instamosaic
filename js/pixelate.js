@@ -187,23 +187,27 @@ function drawMosaic(width, height, area, photoURLArray){
     //http://chimera.labs.oreilly.com/books/1234000001654/ch04.html#the_basic_file_setup_for_this_chapte
 
     //create a new mosiac image
-    var img = new Image;
+    var mosaicImg = new Image;
+    var k = 0;
 
-    console.log(photoURLArray);
+    //console.log(photoURLArray);
     console.log("draw mosiac got array!");
-    img.src = photoURLArray[0];
+    mosaicImg.src = photoURLArray[k];
 
+    mosaicCanvas.width = canvas.width;
+    mosaicCanvas.height = canvas.height;
+
+    //calculate the actual width and height of each image canvas width/pixel width == answer
+    var mosaicPixelWidth = mosaicCanvas.width/width;
+    var mosaicPixelHeight = mosaicCanvas.height/height;
 
     //Create a grid of images that is the the same pixels in width and height
-    img.onload = function(){
-        for (var i=0;i<height;i++){
-            for (var j=0;j<width;j++){
-                for (var k=0;k<area;k++){
-                    img.src = photoURLArray[k];
-                    mosaicctx.drawImage(img,j*50,i*38,50,38); // Or at whatever offset you like
-
-                }
-            }
+    for (var i=0;i<height;i++){
+        for (var j=0;j<width;j++){
+            var mosaicImg = new Image;
+            mosaicImg.src = photoURLArray[k];
+            mosaicctx.drawImage(mosaicImg,j*mosaicPixelWidth,i*mosaicPixelWidth,mosaicPixelWidth,mosaicPixelWidth);
+            k++;
         }
     };
 }
@@ -229,6 +233,7 @@ function submitImageURL() {
 
 // event listeneners for slider
 blocks.addEventListener('change', pixelate, false);
+
 
 /// poly-fill for requestAnmationFrame with fallback for older
 /// browsers which do not support rAF.
